@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate to project directory
-cd /home/azureuser/stage4
+cd /home/azureuser/stage6
 
 # Activate virtual environment
 source env/bin/activate
