@@ -1,6 +1,84 @@
-nohup: failed to run command 'chroma': No such file or directory
-nohup: failed to run command 'chroma': No such file or directory
-nohup: failed to run command 'chroma': No such file or directory
-nohup: failed to run command 'chroma': No such file or directory
-nohup: failed to run command 'chroma': No such file or directory
-nohup: failed to run command 'chroma': No such file or directory
+[1m
+
+                [38;5;069m(((((((((    [38;5;203m((((([38;5;220m####
+             [38;5;069m((((((((((((([38;5;203m((((((((([38;5;220m#########
+           [38;5;069m((((((((((((([38;5;203m((((((((((([38;5;220m###########
+         [38;5;069m(((((((((((((([38;5;203m(((((((((((([38;5;220m############
+        [38;5;069m((((((((((((([38;5;203m(((((((((((((([38;5;220m#############
+        [38;5;069m((((((((((((([38;5;203m(((((((((((((([38;5;220m#############
+         [38;5;069m(((((((((((([38;5;203m((((((((((((([38;5;220m##############
+         [38;5;069m(((((((((((([38;5;203m(((((((((((([38;5;220m##############
+           [38;5;069m(((((((((([38;5;203m((((((((((([38;5;220m#############
+             [38;5;069m(((((((([38;5;203m(((((((([38;5;220m##############
+                [38;5;069m((((([38;5;203m((((    [38;5;220m#########[0m
+
+    
+[1m
+Running Chroma
+[0m
+Saving data to: /home/azureuser/stage6/chroma_data
+Connect to chroma at: http://0.0.0.0:8000
+Getting started guide: https://docs.trychroma.com/getting-started
+
+
+INFO:     [16-03-2025 08:14:30] Set chroma_server_nofile to 65535
+INFO:     [16-03-2025 08:14:30] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+DEBUG:    [16-03-2025 08:14:30] Starting component System
+DEBUG:    [16-03-2025 08:14:30] Starting component OpenTelemetryClient
+DEBUG:    [16-03-2025 08:14:30] Starting component SqliteDB
+DEBUG:    [16-03-2025 08:14:30] Starting component SimpleQuotaEnforcer
+DEBUG:    [16-03-2025 08:14:30] Starting component Posthog
+DEBUG:    [16-03-2025 08:14:30] Starting component SimpleRateLimitEnforcer
+DEBUG:    [16-03-2025 08:14:30] Starting component LocalSegmentManager
+DEBUG:    [16-03-2025 08:14:30] Starting component LocalExecutor
+DEBUG:    [16-03-2025 08:14:30] Starting component SegmentAPI
+INFO:     [16-03-2025 08:14:31] Started server process [12758]
+INFO:     [16-03-2025 08:14:31] Waiting for application startup.
+INFO:     [16-03-2025 08:14:31] Application startup complete.
+INFO:     [16-03-2025 08:14:31] Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     [16-03-2025 08:14:31] 127.0.0.1:42014 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [16-03-2025 08:14:31] 127.0.0.1:42022 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [16-03-2025 08:14:31] 127.0.0.1:42022 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+DEBUG:    [16-03-2025 08:14:31] Collection langchain already exists, returning existing collection.
+INFO:     [16-03-2025 08:14:31] 127.0.0.1:42014 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+DEBUG:    [16-03-2025 08:14:31] Collection langchain already exists, returning existing collection.
+INFO:     [16-03-2025 08:14:31] 127.0.0.1:42014 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+WARNING:  [16-03-2025 08:17:14] Invalid HTTP request received.
+1" 404
+INFO:     [16-03-2025 07:41:22] 127.0.0.1:51450 - "GET /docs HTTP/1.1" 200
+/home/azureuser/stage6/venv/lib/python3.12/site-packages/fastapi/openapi/utils.py:225: UserWarning: Duplicate Operation ID root for function root at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py
+  warnings.warn(message, stacklevel=1)
+/home/azureuser/stage6/venv/lib/python3.12/site-packages/fastapi/openapi/utils.py:225: UserWarning: Duplicate Operation ID reset for function reset at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/telemetry/opentelemetry/__init__.py
+  warnings.warn(message, stacklevel=1)
+/home/azureuser/stage6/venv/lib/python3.12/site-packages/fastapi/openapi/utils.py:225: UserWarning: Duplicate Operation ID version for function version at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py
+  warnings.warn(message, stacklevel=1)
+/home/azureuser/stage6/venv/lib/python3.12/site-packages/fastapi/openapi/utils.py:225: UserWarning: Duplicate Operation ID heartbeat for function heartbeat at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py
+  warnings.warn(message, stacklevel=1)
+/home/azureuser/stage6/venv/lib/python3.12/site-packages/fastapi/openapi/utils.py:225: UserWarning: Duplicate Operation ID pre_flight_checks for function pre_flight_checks at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py
+  warnings.warn(message, stacklevel=1)
+INFO:     [16-03-2025 07:41:23] 127.0.0.1:51450 - "GET /openapi.json HTTP/1.1" 200
+INFO:     [16-03-2025 07:45:32] 127.0.0.1:38350 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [16-03-2025 07:45:32] 127.0.0.1:38354 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [16-03-2025 07:45:32] 127.0.0.1:38354 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+DEBUG:    [16-03-2025 07:45:32] Collection langchain already exists, returning existing collection.
+INFO:     [16-03-2025 07:45:32] 127.0.0.1:38350 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+DEBUG:    [16-03-2025 07:45:32] Collection langchain already exists, returning existing collection.
+INFO:     [16-03-2025 07:45:32] 127.0.0.1:38350 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+INFO:     [16-03-2025 07:58:59] 188.166.173.94:59250 - "GET / HTTP/1.1" 404
+INFO:     [16-03-2025 07:59:00] 188.166.173.94:59260 - "GET /favicon.ico HTTP/1.1" 404
+INFO:     [16-03-2025 08:03:04] 170.64.166.144:60664 - "GET /aaa9 HTTP/1.1" 404
+INFO:     [16-03-2025 08:03:09] 170.64.166.144:60668 - "GET /aab8 HTTP/1.1" 404
+INFO:     [16-03-2025 08:03:13] 170.64.166.144:37288 - "GET / HTTP/1.1" 404
+INFO:     [16-03-2025 08:13:05] Shutting down
+INFO:     [16-03-2025 08:13:05] Waiting for application shutdown.
+DEBUG:    [16-03-2025 08:13:05] Stopping component System
+DEBUG:    [16-03-2025 08:13:05] Stopping component SegmentAPI
+DEBUG:    [16-03-2025 08:13:05] Stopping component LocalExecutor
+DEBUG:    [16-03-2025 08:13:05] Stopping component LocalSegmentManager
+DEBUG:    [16-03-2025 08:13:05] Stopping component SimpleRateLimitEnforcer
+DEBUG:    [16-03-2025 08:13:05] Stopping component Posthog
+DEBUG:    [16-03-2025 08:13:05] Stopping component SimpleQuotaEnforcer
+DEBUG:    [16-03-2025 08:13:05] Stopping component SqliteDB
+DEBUG:    [16-03-2025 08:13:05] Stopping component OpenTelemetryClient
+INFO:     [16-03-2025 08:13:05] Application shutdown complete.
+INFO:     [16-03-2025 08:13:05] Finished server process [9884]

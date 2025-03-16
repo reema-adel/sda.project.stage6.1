@@ -1,37 +1,68 @@
-name: Deploy to Azure VM
+name: CI/CD Pipeline for Chatbot Deployment
 
+# Trigger the workflow on push to the main branch
 on:
   workflow_dispatch:
   push:
     branches:
-      - master  # Trigger on pushes to main branch
+      - master
 
+# Define the jobs to be executed
 jobs:
   deploy:
+    # Run on an Ubuntu environment
     runs-on: ubuntu-latest
+
+    # Steps to execute the deployment
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      # Check out the repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Deploy to VM
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.VM_HOST }}
-        username: ${{ secrets.VM_USERNAME }}
-        key: ${{ secrets.VM_SSH_KEY }}
-        script: |
-          # Navigate to project directory
-          cd /home/azureuser/stage6
+      # Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12' # Match your VM's Python version
 
-          # Pull latest code
-          git pull https://github.com/azooooz2021/stage6Part2 master
-
-          # Ensure virtual environment exists and is updated
-          if [ ! -d "env" ]; then
-            python3 -m venv env
-          fi
-          source env/bin/activate
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
+        working-directory: .
 
-          # Run deployment script
-          ./deploy.sh
+      # Deploy to Azure VM via SSH
+      - name: Deploy to Azure VM
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          VM_PATH: /home/azureuser/stage6
+        run: |
+          # Install SSH client
+          sudo apt-get update
+          sudo apt-get install -y openssh-client
+
+          # Create SSH key file
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+          # Add SSH host key to known hosts (optional, avoid strict host key checking)
+          ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
+
+          # Copy code to VM and restart services
+          scp -r * $SSH_USER@$SSH_HOST:$VM_PATH
+          ssh $SSH_USER@$SSH_HOST << 'EOF'
+            cd $VM_PATH
+            source venv/bin/activate
+            pip install -r requirements.txt
+            sudo systemctl restart chromadb.service
+            sudo systemctl restart backend.service
+            sudo systemctl restart frontend.service
+            echo "Deployment completed"
+          EOF
+
+          # Clean up
+          rm -f ~/.ssh/id_rsa

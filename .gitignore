@@ -4,3 +4,5 @@ __pycache__/
 chroma.log
 ChromaDB/
 pdf_store/
+chroma_data/
+env/

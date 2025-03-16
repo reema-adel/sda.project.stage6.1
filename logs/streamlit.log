@@ -1,6 +1,22 @@
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+
+
+  You can now view your Streamlit app in your browser.
+
+  URL: http://0.0.0.0:8501
+
+  Stopping...
+h file or directory
 nohup: failed to run command 'streamlit': No such file or directory
 nohup: failed to run command 'streamlit': No such file or directory
 nohup: failed to run command 'streamlit': No such file or directory
-nohup: failed to run command 'streamlit': No such file or directory
-nohup: failed to run command 'streamlit': No such file or directory
-nohup: failed to run command 'streamlit': No such file or directory
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+
+
+  You can now view your Streamlit app in your browser.
+
+  URL: http://0.0.0.0:8501
+
+  Stopping...
