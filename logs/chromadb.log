@@ -59,16 +59,20 @@ INFO:     [16-03-2025 12:02:45] 167.94.138.173:49788 - "GET / HTTP/1.1" 404
 WARNING:  [16-03-2025 12:02:45] Invalid HTTP request received.
 INFO:     [16-03-2025 12:02:49] 167.94.138.173:49800 - "GET /favicon.ico HTTP/1.1" 404
 WARNING:  [16-03-2025 12:02:49] Invalid HTTP request received.
-eartbeat at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py
-  warnings.warn(message, stacklevel=1)
-/home/azureuser/stage6/venv/lib/python3.12/site-packages/fastapi/openapi/utils.py:225: UserWarning: Duplicate Operation ID pre_flight_checks for function pre_flight_checks at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py
-  warnings.warn(message, stacklevel=1)
-INFO:     [16-03-2025 07:41:23] 127.0.0.1:51450 - "GET /openapi.json HTTP/1.1" 200
-INFO:     [16-03-2025 07:45:32] 127.0.0.1:38350 - "GET /api/v2/auth/identity HTTP/1.1" 200
-INFO:     [16-03-2025 07:45:32] 127.0.0.1:38354 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
-INFO:     [16-03-2025 07:45:32] 127.0.0.1:38354 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
-DEBUG:    [16-03-2025 07:45:32] Collection langchain already exists, returning existing collection.
-INFO:     [16-03-2025 07:45:32] 127.0.0.1:38350 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+WARNING:  [16-03-2025 16:03:40] Invalid HTTP request received.
+INFO:     [16-03-2025 16:03:41] 47.236.248.116:53212 - "GET / HTTP/1.1" 404
+INFO:     [16-03-2025 16:03:42] 47.236.248.116:53214 - "GET /favicon.ico HTTP/1.1" 404
+INFO:     [16-03-2025 16:03:49] 123.160.223.73:55562 - "GET / HTTP/1.1" 404
+INFO:     [16-03-2025 18:02:34] 20.65.193.158:51110 - "GET / HTTP/1.1" 404
+INFO:     [16-03-2025 19:21:11] 198.235.24.215:57720 - "GET / HTTP/1.1" 404
+INFO:     [16-03-2025 19:35:25] 162.142.125.206:33010 - "GET / HTTP/1.1" 404
+INFO:     [16-03-2025 19:35:38] 162.142.125.206:55324 - "GET / HTTP/1.1" 404
+WARNING:  [16-03-2025 19:35:40] Invalid HTTP request received.
+INFO:     [16-03-2025 19:35:47] 162.142.125.206:55030 - "GET /favicon.ico HTTP/1.1" 404
+WARNING:  [16-03-2025 19:35:48] Invalid HTTP request received.
+INFO:     [16-03-2025 22:30:32] 13.66.2.192:59809 - "GET / HTTP/1.0" 400
+WARNING:  [16-03-2025 22:38:00] Invalid HTTP request received.
+     [16-03-2025 07:45:32] 127.0.0.1:38350 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
 DEBUG:    [16-03-2025 07:45:32] Collection langchain already exists, returning existing collection.
 INFO:     [16-03-2025 07:45:32] 127.0.0.1:38350 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
 INFO:     [16-03-2025 07:58:59] 188.166.173.94:59250 - "GET / HTTP/1.1" 404

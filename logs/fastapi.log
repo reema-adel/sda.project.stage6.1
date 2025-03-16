@@ -2,31 +2,32 @@ INFO:     Started server process [12759]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
-INFO:     127.0.0.1:57916 - "GET / HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57916 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57916 - "GET /docs HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57916 - "GET /openapi.json HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58068 - "GET /load_chat/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58078 - "GET /load_chat/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58092 - "POST /chat/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58094 - "POST /save_chat/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60754 - "GET /load_chat/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60764 - "GET /load_chat/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60766 - "GET /load_chat/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60770 - "POST /save_chat/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38316 - "GET /load_chat/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38328 - "POST /chat/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38340 - "POST /save_chat/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55718 - "GET /load_chat/ HTTP/1.1" 200 OK
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [10403]
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
-  File "/usr/lib/python3/dist-packages/uvicorn/server.py", line 69, in serve
-    config.load()
-  File "/usr/lib/python3/dist-packages/uvicorn/config.py", line 458, in load
+INFO:     185.165.191.26:42586 - "GET / HTTP/1.1" 404 Not Found
+INFO:     185.165.191.26:35066 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.146.60:47534 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.146.60:51574 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.146.60:51588 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     123.160.223.73:59145 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.59:40638 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.138.59:37502 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.59:59000 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.201:57620 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.138.201:51046 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.201:53656 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     205.210.31.45:50915 - "GET / HTTP/1.0" 404 Not Found
+INFO:     13.66.2.192:59805 - "GET / HTTP/1.0" 404 Not Found
+es/uvicorn/config.py", line 458, in load
     self.loaded_app = import_from_string(self.app)
                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/usr/lib/python3/dist-packages/uvicorn/importer.py", line 24, in import_from_string
