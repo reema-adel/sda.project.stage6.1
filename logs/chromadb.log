@@ -44,15 +44,22 @@ INFO:     [16-03-2025 08:14:31] 127.0.0.1:42014 - "POST /api/v2/tenants/default_
 DEBUG:    [16-03-2025 08:14:31] Collection langchain already exists, returning existing collection.
 INFO:     [16-03-2025 08:14:31] 127.0.0.1:42014 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
 WARNING:  [16-03-2025 08:17:14] Invalid HTTP request received.
-1" 404
-INFO:     [16-03-2025 07:41:22] 127.0.0.1:51450 - "GET /docs HTTP/1.1" 200
-/home/azureuser/stage6/venv/lib/python3.12/site-packages/fastapi/openapi/utils.py:225: UserWarning: Duplicate Operation ID root for function root at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py
-  warnings.warn(message, stacklevel=1)
-/home/azureuser/stage6/venv/lib/python3.12/site-packages/fastapi/openapi/utils.py:225: UserWarning: Duplicate Operation ID reset for function reset at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/telemetry/opentelemetry/__init__.py
-  warnings.warn(message, stacklevel=1)
-/home/azureuser/stage6/venv/lib/python3.12/site-packages/fastapi/openapi/utils.py:225: UserWarning: Duplicate Operation ID version for function version at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py
-  warnings.warn(message, stacklevel=1)
-/home/azureuser/stage6/venv/lib/python3.12/site-packages/fastapi/openapi/utils.py:225: UserWarning: Duplicate Operation ID heartbeat for function heartbeat at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py
+WARNING:  [16-03-2025 08:39:19] Invalid HTTP request received.
+WARNING:  [16-03-2025 08:39:19] Invalid HTTP request received.
+INFO:     [16-03-2025 08:39:19] 178.128.147.219:46846 - "GET / HTTP/1.1" 404
+INFO:     [16-03-2025 08:39:19] 178.128.147.219:46854 - "GET /login HTTP/1.1" 404
+INFO:     [16-03-2025 09:21:49] 199.45.155.69:55412 - "GET / HTTP/1.1" 404
+INFO:     [16-03-2025 09:22:01] 199.45.155.69:47248 - "GET / HTTP/1.1" 404
+WARNING:  [16-03-2025 09:22:02] Invalid HTTP request received.
+INFO:     [16-03-2025 09:22:08] 199.45.155.69:46522 - "GET /favicon.ico HTTP/1.1" 404
+WARNING:  [16-03-2025 09:22:08] Invalid HTTP request received.
+INFO:     [16-03-2025 10:25:00] 195.178.110.224:59662 - "GET / HTTP/1.0" 400
+INFO:     [16-03-2025 12:02:35] 167.94.138.173:46912 - "GET / HTTP/1.1" 404
+INFO:     [16-03-2025 12:02:45] 167.94.138.173:49788 - "GET / HTTP/1.1" 404
+WARNING:  [16-03-2025 12:02:45] Invalid HTTP request received.
+INFO:     [16-03-2025 12:02:49] 167.94.138.173:49800 - "GET /favicon.ico HTTP/1.1" 404
+WARNING:  [16-03-2025 12:02:49] Invalid HTTP request received.
+eartbeat at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py
   warnings.warn(message, stacklevel=1)
 /home/azureuser/stage6/venv/lib/python3.12/site-packages/fastapi/openapi/utils.py:225: UserWarning: Duplicate Operation ID pre_flight_checks for function pre_flight_checks at /home/azureuser/stage6/venv/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py
   warnings.warn(message, stacklevel=1)

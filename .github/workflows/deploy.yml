@@ -2,18 +2,15 @@ name: CI/CD Pipeline for Chatbot Deployment
 
 # Trigger the workflow on push to the main branch
 on:
-  workflow_dispatch:
   push:
     branches:
       - master
 
 # Define the jobs to be executed
 jobs:
-  deploy:
-    # Run on an Ubuntu environment
+  build-and-deploy:
     runs-on: ubuntu-latest
 
-    # Steps to execute the deployment
     steps:
       # Check out the repository code
       - name: Checkout code
@@ -25,44 +22,35 @@ jobs:
         with:
           python-version: '3.12' # Match your VM's Python version
 
-      # Install dependencies
+      # Install dependencies (optional, for validation on runner)
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
         working-directory: .
 
-      # Deploy to Azure VM via SSH
-      - name: Deploy to Azure VM
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_USER: ${{ secrets.SSH_USER }}
-          VM_PATH: /home/azureuser/stage6
+      # Azure Login using service principal credentials
+      - name: Azure Login
+        uses: azure/login@v2.2.0
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Run the update script on the Azure VM using CustomScript extension
+      - name: Azure VM Update
         run: |
-          # Install SSH client
-          sudo apt-get update
-          sudo apt-get install -y openssh-client
+          az vm extension set \
+            --resource-group ${{ secrets.RESOURCE_GROUP }} \
+            --vm-name ${{ secrets.VM_NAME }} \
+            --name CustomScript \
+            --force-update \
+            --publisher Microsoft.Azure.Extensions \
+            --settings '{"commandToExecute": "/usr/local/bin/update_project.sh"}'
 
-          # Create SSH key file
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-
-          # Add SSH host key to known hosts (optional, avoid strict host key checking)
-          ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
-
-          # Copy code to VM and restart services
-          scp -r * $SSH_USER@$SSH_HOST:$VM_PATH
-          ssh $SSH_USER@$SSH_HOST << 'EOF'
-            cd $VM_PATH
-            source venv/bin/activate
-            pip install -r requirements.txt
-            sudo systemctl restart chromadb.service
-            sudo systemctl restart backend.service
-            sudo systemctl restart frontend.service
-            echo "Deployment completed"
-          EOF
-
-          # Clean up
-          rm -f ~/.ssh/id_rsa
+      # Optional: Verify the deployment by checking service status
+      - name: Verify Deployment
+        run: |
+          az vm run-command invoke \
+            --resource-group ${{ secrets.RESOURCE_GROUP }} \
+            --name ${{ secrets.VM_NAME }} \
+            --command-id RunShellScript \
+            --scripts "systemctl status chromadb.service && systemctl status backend.service && systemctl status frontend.service"
