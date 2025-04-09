@@ -46,7 +46,7 @@ jobs:
             --force-update \
             --publisher Microsoft.Azure.Extensions \
             --settings '{"commandToExecute": "/usr/local/bin/update_project.sh"}'
-
+    
       # Optional: Verify the deployment by checking service status
       - name: Verify Deployment
         run: |
