@@ -54,4 +54,4 @@ jobs:
             --resource-group ${{ secrets.RESOURCE_GROUP }} \
             --name ${{ secrets.VM_NAME }} \
             --command-id RunShellScript \
-            --scripts "systemctl status chromadb.service && systemctl status backend.service && systemctl status frontend.service"
+            --scripts "systemctl status chromadb.service && systemctl status backend.service && systemctl status chatbot.service"
